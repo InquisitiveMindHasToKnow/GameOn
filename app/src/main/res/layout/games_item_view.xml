@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/individual_game_card"
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/gameon_diagonal_at_grey">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/home_team_circularimageview"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/chc"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/home_team_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Chicago \n Cubs"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/home_team_circularimageview"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/home_team_score_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="5"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/home_team_circularimageview"
+                app:layout_constraintTop_toBottomOf="@id/home_team_name_textview" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/away_team_circularimageview"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/phi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/away_team_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Philadelphia \n Phillies"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/away_team_circularimageview" />
+
+            <TextView
+                android:id="@+id/away_team_score_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:hint="4"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/away_team_name_textview"
+                app:layout_constraintRight_toLeftOf="@id/away_team_circularimageview"
+
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+    <Button
+        android:id="@+id/play_now_button"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="Play Now"
+        app:layout_constraintTop_toBottomOf="@id/individual_game_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="20dp"
+        />
+
+    <Button
+        android:id="@+id/gameon_date_and_time"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:hint="GameOn in \n 2hr:35m:48s"
+        app:layout_constraintLeft_toRightOf="@id/play_now_button"
+        app:layout_constraintTop_toBottomOf="@id/individual_game_card"
+        />
+</android.support.constraint.ConstraintLayout>
