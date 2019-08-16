@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GameOnAndroidChallenge</string>
+    <string name="balance">/ Balance</string>
+    <string name="my_picks">/ My Picks</string>
+    <string name="refer_friends">/ Refer Friends</string>
+    <string name="how_to_play">/ How To Play</string>
+    <string name="lifetime_points">/ Lifetime Points</string>
 </resources>

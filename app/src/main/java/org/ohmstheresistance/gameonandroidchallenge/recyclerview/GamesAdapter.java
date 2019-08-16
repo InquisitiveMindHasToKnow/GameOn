@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import org.ohmstheresistance.gameonandroidchallenge.R;
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GamesAdapter extends RecyclerView.Adapter<GamesViewHolder> {
