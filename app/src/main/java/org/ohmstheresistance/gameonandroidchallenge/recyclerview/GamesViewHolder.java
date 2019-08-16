@@ -39,8 +39,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-
-
+                homeTeamName.setText(games.getHome_team().getName());
+                awayTeamName.setText(games.getVisitor_team().getName());
 
             }
 

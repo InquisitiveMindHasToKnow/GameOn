@@ -4,11 +4,9 @@ import java.util.List;
 
 public class GamesAPI {
 
-        private List<Games> id;
+    private List<Games> id;
 
-        public List<Games> getId(){
-            return id;
-        }
+    public List<Games> getId() {
+        return id;
     }
-
-
+}
