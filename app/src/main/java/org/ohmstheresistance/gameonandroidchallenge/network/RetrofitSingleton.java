@@ -17,7 +17,7 @@ public class RetrofitSingleton {
 
         retrofitInstance = new Retrofit
                 .Builder()
-                .baseUrl("https://raw.githubusercontent.com/")
+                .baseUrl("https://gist.githubusercontent.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofitInstance;
