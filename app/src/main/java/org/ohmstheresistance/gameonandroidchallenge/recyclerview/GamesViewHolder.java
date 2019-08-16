@@ -2,10 +2,13 @@ package org.ohmstheresistance.gameonandroidchallenge.recyclerview;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.squareup.picasso.Picasso;
 
 import org.ohmstheresistance.gameonandroidchallenge.R;
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
@@ -13,11 +16,20 @@ import org.ohmstheresistance.gameonandroidchallenge.model.Games;
 public class GamesViewHolder extends RecyclerView.ViewHolder {
 
     private CircularImageView homeTeamCircularImageView;
-    private CircularImageView awayTeamCircularImageView;
+    private CircularImageView visitorTeamCircularImageView;
     private TextView homeTeamName;
-    private TextView awayTeamName;
+    private TextView visitorTeamName;
     private TextView homeTeamScore;
-    private TextView awayTeamScore;
+    private TextView visitorTeamScore;
+    private Button playNowButton;
+    private Button pickTimebutton;
+
+
+    private String homeTeamLogo;
+    private String visitorTeamLogo;
+
+    private static final String TAG = "GameJSON.TAG";
+
 
 
     public GamesViewHolder(@NonNull View itemView) {
@@ -25,11 +37,16 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         homeTeamCircularImageView = itemView.findViewById(R.id.home_team_circularimageview);
-        awayTeamCircularImageView = itemView.findViewById(R.id.away_team_circularimageview);
+        visitorTeamCircularImageView = itemView.findViewById(R.id.away_team_circularimageview);
         homeTeamName = itemView.findViewById(R.id.home_team_name_textview);
-        awayTeamName = itemView.findViewById(R.id.away_team_name_textview);
+        visitorTeamName = itemView.findViewById(R.id.away_team_name_textview);
         homeTeamScore = itemView.findViewById(R.id.home_team_score_textview);
-        awayTeamScore = itemView.findViewById(R.id.away_team_score_textview);
+        visitorTeamScore = itemView.findViewById(R.id.away_team_score_textview);
+        playNowButton = itemView.findViewById(R.id.play_now_button);
+        pickTimebutton = itemView.findViewById(R.id.gameon_date_and_time_button);
+
+
+
 
     }
 
@@ -39,8 +56,30 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
+                pickTimebutton.setText(games.getPicks_open_time());
+
+
+                Log.d("Cmon man", games.getLeague().getSport().getName());
+
+                homeTeamLogo = games.getHome_team().getLogo();
+                visitorTeamLogo = games.getVisitor_team().getLogo();
+
+
                 homeTeamName.setText(games.getHome_team().getName());
-                awayTeamName.setText(games.getVisitor_team().getName());
+                visitorTeamName.setText(games.getVisitor_team().getName());
+
+                homeTeamScore.setText(games.getHome_team_points());
+                visitorTeamScore.setText(games.getVisitor_team_points());
+
+
+                Picasso.get()
+                        .load(homeTeamLogo)
+                        .into(homeTeamCircularImageView);
+
+
+                Picasso.get()
+                        .load(visitorTeamLogo)
+                        .into(visitorTeamCircularImageView);
 
             }
 

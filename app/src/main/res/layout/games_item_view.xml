@@ -101,7 +101,7 @@
         />
 
     <Button
-        android:id="@+id/gameon_date_and_time"
+        android:id="@+id/gameon_date_and_time_button"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:hint="GameOn in \n 2hr:35m:48s"

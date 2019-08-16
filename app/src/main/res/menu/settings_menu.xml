@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/gameon_balance_item"
+        android:title="@string/balance" />
+
+    <item
+        android:id="@+id/gameon_mypicks_item"
+        android:title="@string/my_picks"/>
+
+    <item
+        android:id="@+id/gameon_lifetime_points_item"
+        android:title="@string/lifetime_points"/>
+
+    <item
+        android:id="@+id/gameon_refer_friends_item"
+        android:title="@string/refer_friends"/>
+
+    <item
+        android:id="@+id/gameon_how_to_play_item"
+        android:title="@string/how_to_play"/>
+
+</menu>
