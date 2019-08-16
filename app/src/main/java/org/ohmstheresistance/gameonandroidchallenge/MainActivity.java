@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
-import org.ohmstheresistance.gameonandroidchallenge.model.GamesAPI;
 import org.ohmstheresistance.gameonandroidchallenge.network.GameService;
 import org.ohmstheresistance.gameonandroidchallenge.network.RetrofitSingleton;
 import org.ohmstheresistance.gameonandroidchallenge.recyclerview.GamesAdapter;
@@ -40,9 +40,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Games>> call, Response<List<Games>> response) {
 
+                if (gamesList == null) {
+                    Toast.makeText(getApplicationContext(), "Unable To Display Empty List", Toast.LENGTH_LONG).show();
+                }
+
                 Log.d(TAG, "Retrofit call works, Omar! " + response.body());
-                gamesList.addAll(response.body());
                 GamesAdapter gamesAdapter = new GamesAdapter(gamesList);
+
+                gamesList = response.body();
                 gamesRecyclerView.setAdapter(gamesAdapter);
                 gamesRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
