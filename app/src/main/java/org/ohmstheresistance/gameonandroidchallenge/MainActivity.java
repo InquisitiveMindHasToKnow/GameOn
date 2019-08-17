@@ -58,20 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
                     case R.id.gameon_balance_item:
-                        startActivity(new Intent(MainActivity.this, DisplaySettingsMenu.class));
                         break;
                     case R.id.gameon_mypicks_item:
-                        startActivity(new Intent(MainActivity.this, DisplaySettingsMenu.class));
                         break;
                     case R.id.gameon_lifetime_points_item:
-                        startActivity(new Intent(MainActivity.this, DisplaySettingsMenu.class));
                         break;
                     case R.id.gameon_refer_friends_item:
-                        startActivity(new Intent(MainActivity.this, DisplaySettingsMenu.class));
                         break;
-
                     case R.id.gameon_how_to_play_item:
-                        startActivity(new Intent(MainActivity.this, DisplaySettingsMenu.class));
                         break;
                 }
                 return true;
@@ -96,11 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
                 gamesList = response.body();
 
-                Log.d(TAG, "Retrofit call works " + response.body().get(2).getBroadcast_info());
+                Log.d(TAG, "Retrofit call works " + response.body().get(6).getBroadcast_info());
 
-
-
-                    GamesAdapter gamesAdapter = new GamesAdapter(gamesList);
+                GamesAdapter gamesAdapter = new GamesAdapter(gamesList);
                     gamesRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     gamesRecyclerView.setAdapter(gamesAdapter);
 
