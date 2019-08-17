@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">GameOnAndroidChallenge</string>
-    <string name="balance"><font fgcolor="#FFF" size="32"> /</font> /<font fgcolor="#E0FD16" size="32"> Balance </font></string>
-    <string name="my_picks"><font fgcolor="#FFF" size="32"> / </font> /<font fgcolor="#E0FD16" size="32"> My Picks </font></string>
-    <string name="refer_friends"><font fgcolor="#FFF" size="32"> / </font> /<font fgcolor="#E0FD16" size="32"> Refer Friends</font></string>
-    <string name="how_to_play"><font fgcolor="#FFF" size="32"> / </font> /<font fgcolor="#E0FD16" size="32"> How To Play</font></string>
-    <string name="lifetime_points"><font fgcolor="#FFF" size="32"> / </font> /<font fgcolor="#E0FD16" size="32"> Lifetime Points </font></string>
+    <string name="balance"><font fgcolor="#E0FD16" size="32"> / </font> <font fgcolor="#FFF" size="32"> </font> Balance</string>
+    <string name="my_picks"> <font fgcolor="#E0FD16" size="32"> / </font> <font fgcolor="#FFF" size="32">  </font> My Picks</string>
+    <string name="refer_friends"><font fgcolor="#E0FD16" size="32"> / </font> <font fgcolor="#FFF" size="32"> </font> Refer Friends</string>
+    <string name="how_to_play"><font fgcolor="#E0FD16" size="32"> / </font> <font fgcolor="#FFF" size="32"> </font> How To Play</string>
+    <string name="lifetime_points"><font fgcolor="#E0FD16" size="32"> / </font> <font fgcolor="#FFF" size="32">  </font> Lifetime Points</string>
     <string name="refer_button_text">Refer Friends \n <font fgcolor="#E0FD16" size="10">For 100 Bonus Points</font></string>
     <string name="sports_menu_all">ALL <font fgcolor="#FFF" size="24"> </font></string>
     <string name="sports_menu_mlb">MLB <font fgcolor="#FFF" size="24"> </font></string>
