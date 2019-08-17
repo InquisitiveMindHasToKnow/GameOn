@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setLogo(R.drawable.gameonrankandlogo);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_nav_menu);
 
         if (getSupportActionBar() != null) {

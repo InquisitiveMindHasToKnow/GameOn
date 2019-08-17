@@ -61,12 +61,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/gameon_logo"/>
-
     </android.support.design.widget.NavigationView>
 
     <android.support.design.widget.NavigationView
