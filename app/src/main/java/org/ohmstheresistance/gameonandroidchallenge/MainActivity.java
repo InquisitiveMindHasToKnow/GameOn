@@ -54,10 +54,6 @@ public class MainActivity extends AppCompatActivity {
         sports_navView = findViewById(R.id.sports_nav_view);
 
 
-        sports_navView.getMenu().getItem(0).setChecked(true);
-
-
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_nav_menu);
