@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/sports_navigation_all"
+        android:title="@string/sports_menu_all" />
+
+    <item
+        android:id="@+id/sports_navigation_mlb"
+        android:title="@string/sports_menu_mlb" />
+    <item
+        android:id="@+id/sports_navigation_nfl"
+        android:title="@string/sports_menu_nfl"/>
+
+    <item
+        android:id="@+id/sports_navigation_nba"
+        android:title="@string/sports_menu_nba" />
+
+    <item
+        android:id="@+id/sports_navigation_epl"
+        android:title="@string/sports_menu_epl" />
+</menu>
