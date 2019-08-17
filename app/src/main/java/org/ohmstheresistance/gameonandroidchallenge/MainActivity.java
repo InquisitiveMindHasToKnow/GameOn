@@ -1,5 +1,6 @@
 package org.ohmstheresistance.gameonandroidchallenge;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Button;
 
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         drawerLayout = findViewById(R.id.drawerLayout);
@@ -53,9 +57,18 @@ public class MainActivity extends AppCompatActivity {
         sports_navView.getMenu().getItem(0).setChecked(true);
 
 
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setLogo(R.drawable.gameonrankandlogo);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_nav_menu);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+            Drawable toolbarBackground = getResources().getDrawable(R.drawable.gameonrankandlogo);
+            getSupportActionBar().setBackgroundDrawable(toolbarBackground);
+        }
 
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -121,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
 
                 menuItem.setChecked(true);
 
