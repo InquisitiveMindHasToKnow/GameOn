@@ -9,11 +9,6 @@
     android:fitsSystemWindows="true"
     >
 
-    <FrameLayout
-        android:id="@+id/nav_frame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/nav_toolbar"
             android:layout_height="0dp"
@@ -22,12 +17,19 @@
 
         </android.support.v7.widget.Toolbar>
 
-    </FrameLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight=".08"
+        >
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/games_recycler_view"
@@ -35,7 +37,27 @@
             android:layout_height="match_parent"
             />
 
-    </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E0FD16"
+        android:layout_weight=".6"
+        >
+
+        <Button
+            android:id="@+id/refer_friend_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#0C0F32"
+            android:textColor="#FFF"
+            android:text="@string/refer_button_text"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -49,10 +71,12 @@
         app:headerLayout="@layout/nav_header">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:src="@drawable/gameon_logo"/>
 
     </android.support.design.widget.NavigationView>
+
+
 </android.support.v4.widget.DrawerLayout>
