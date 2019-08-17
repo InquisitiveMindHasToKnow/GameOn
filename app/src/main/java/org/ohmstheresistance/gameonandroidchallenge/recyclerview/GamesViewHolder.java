@@ -31,59 +31,44 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
     private static final String TAG = "GameJSON.TAG";
 
 
-
     public GamesViewHolder(@NonNull View itemView) {
 
         super(itemView);
 
         homeTeamCircularImageView = itemView.findViewById(R.id.home_team_circularimageview);
-        visitorTeamCircularImageView = itemView.findViewById(R.id.away_team_circularimageview);
+        visitorTeamCircularImageView = itemView.findViewById(R.id.visitor_team_circularimageview);
         homeTeamName = itemView.findViewById(R.id.home_team_name_textview);
-        visitorTeamName = itemView.findViewById(R.id.away_team_name_textview);
+        visitorTeamName = itemView.findViewById(R.id.visitor_team_name_textview);
         homeTeamScore = itemView.findViewById(R.id.home_team_score_textview);
         visitorTeamScore = itemView.findViewById(R.id.away_team_score_textview);
         playNowButton = itemView.findViewById(R.id.play_now_button);
         pickTimebutton = itemView.findViewById(R.id.gameon_date_and_time_button);
 
-
-
-
     }
+
 
     public void onBind(final Games games) {
 
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        pickTimebutton.setText("GameOn @ \n" + games.getPicks_open_time());
 
-                pickTimebutton.setText(games.getPicks_open_time());
+        visitorTeamLogo = games.getVisitor_team().getLogo();
+        homeTeamLogo = games.getHome_team().getLogo();
 
+        homeTeamName.setText(games.getHome_team().getName());
+        visitorTeamName.setText(games.getVisitor_team().getName());
 
-                Log.d("Cmon man", games.getLeague().getSport().getName());
+        //homeTeamScore.setText(games.getHome_team_points());
+        //visitorTeamScore.setText(games.getVisitor_team_points());
 
-                homeTeamLogo = games.getHome_team().getLogo();
-                visitorTeamLogo = games.getVisitor_team().getLogo();
-
-
-                homeTeamName.setText(games.getHome_team().getName());
-                visitorTeamName.setText(games.getVisitor_team().getName());
-
-                homeTeamScore.setText(games.getHome_team_points());
-                visitorTeamScore.setText(games.getVisitor_team_points());
+        Picasso.get()
+                .load(homeTeamLogo)
+                .into(homeTeamCircularImageView);
 
 
-                Picasso.get()
-                        .load(homeTeamLogo)
-                        .into(homeTeamCircularImageView);
+        Picasso.get()
+                .load(visitorTeamLogo)
+                .into(visitorTeamCircularImageView);
 
-
-                Picasso.get()
-                        .load(visitorTeamLogo)
-                        .into(visitorTeamCircularImageView);
-
-            }
-
-        });
 
     }
 }
