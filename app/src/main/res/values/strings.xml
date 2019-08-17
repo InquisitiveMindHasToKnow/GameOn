@@ -5,4 +5,6 @@
     <string name="refer_friends">/ Refer Friends</string>
     <string name="how_to_play">/ How To Play</string>
     <string name="lifetime_points">/ Lifetime Points</string>
+
+    <string name="refer_button_text">Refer Friends \n <font fgcolor="#E0FD16">For 100 Bonus Points</font></string>
 </resources>

@@ -40,7 +40,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         homeTeamName = itemView.findViewById(R.id.home_team_name_textview);
         visitorTeamName = itemView.findViewById(R.id.visitor_team_name_textview);
         homeTeamScore = itemView.findViewById(R.id.home_team_score_textview);
-        visitorTeamScore = itemView.findViewById(R.id.away_team_score_textview);
+        visitorTeamScore = itemView.findViewById(R.id.visitor_team_score_textview);
         playNowButton = itemView.findViewById(R.id.play_now_button);
         pickTimebutton = itemView.findViewById(R.id.gameon_date_and_time_button);
 
