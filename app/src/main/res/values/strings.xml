@@ -6,9 +6,9 @@
     <string name="how_to_play">/ How To Play</string>
     <string name="lifetime_points">/ Lifetime Points</string>
     <string name="refer_button_text">Refer Friends \n <font fgcolor="#E0FD16">For 100 Bonus Points</font></string>
-    <string name="sports_menu_all">ALL <font fgcolor="#FFF"> ALL</font></string>
-    <string name="sports_menu_mlb">MLB</string>
-    <string name="sports_menu_nfl">NFL</string>
-    <string name="sports_menu_nba">NBA</string>
-    <string name="sports_menu_epl">EPL</string>
+    <string name="sports_menu_all">ALL <font fgcolor="#FFF"></font></string>
+    <string name="sports_menu_mlb">MLB </string>
+    <string name="sports_menu_nfl">NFL </string>
+    <string name="sports_menu_nba">NBA </string>
+    <string name="sports_menu_epl">EPL </string>
 </resources>
