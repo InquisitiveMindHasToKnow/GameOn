@@ -49,13 +49,22 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(final Games games) {
 
+        String homeTeam = games.getHome_team().getName();
+        String[] splittedHomeTeamName = homeTeam.split(" ");
+
+        String visitorTeam = games.getVisitor_team().getName();
+        String[] splittedVisitorTeamName = visitorTeam.split(" ");
+
+
         pickTimebutton.setText("GameOn @ \n" + games.getPicks_open_time());
 
         visitorTeamLogo = games.getVisitor_team().getLogo();
         homeTeamLogo = games.getHome_team().getLogo();
 
-        homeTeamName.setText(games.getHome_team().getName());
-        visitorTeamName.setText(games.getVisitor_team().getName());
+        homeTeamName.setText(splittedHomeTeamName[0] +"\n" + splittedHomeTeamName[1]);
+        visitorTeamName.setText(splittedVisitorTeamName[0] + "\n" + splittedVisitorTeamName[1]);
+
+
 
         //homeTeamScore.setText(games.getHome_team_points());
         //visitorTeamScore.setText(games.getVisitor_team_points());
