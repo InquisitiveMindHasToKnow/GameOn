@@ -49,21 +49,36 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(final Games games) {
 
-        String homeTeam = games.getHome_team().getName();
-        String[] splittedHomeTeamName = homeTeam.split(" ");
+      String homeTeam = games.getHome_team().getName();
+      String[] splitHomeTeamName = homeTeam.split(" ");
 
-        String visitorTeam = games.getVisitor_team().getName();
-        String[] splittedVisitorTeamName = visitorTeam.split(" ");
+      if(splitHomeTeamName.length <= 2) {
+          homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
+
+      }else{
+
+          homeTeamName.setText(splitHomeTeamName[0] + " " + splitHomeTeamName[1] + "\n" + splitHomeTeamName[2]);
+
+      }
+
+
+      String visitorTeam = games.getVisitor_team().getName();
+      String[] splitVisitorTeamName = visitorTeam.split(" ");
+
+        if(splitVisitorTeamName.length <= 2) {
+            visitorTeamName.setText(splitVisitorTeamName[0] + "\n" + splitVisitorTeamName[1]);
+
+        }else{
+
+            visitorTeamName.setText(splitVisitorTeamName[0] + " " + splitVisitorTeamName[1] + "\n" + splitVisitorTeamName[2]);
+
+        }
 
 
         pickTimebutton.setText("GameOn @ \n" + games.getPicks_open_time());
 
         visitorTeamLogo = games.getVisitor_team().getLogo();
         homeTeamLogo = games.getHome_team().getLogo();
-
-        homeTeamName.setText(splittedHomeTeamName[0] +"\n" + splittedHomeTeamName[1]);
-        visitorTeamName.setText(splittedVisitorTeamName[0] + "\n" + splittedVisitorTeamName[1]);
-
 
 
         //homeTeamScore.setText(games.getHome_team_points());
