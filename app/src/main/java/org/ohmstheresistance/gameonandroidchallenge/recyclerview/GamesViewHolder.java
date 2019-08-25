@@ -24,7 +24,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
     private TextView homeTeamScore;
     private TextView visitorTeamScore;
     private Button playNowButton;
-    private Button pickTimebutton;
+    private Button pickTimeButton;
 
 
     private String homeTeamLogo;
@@ -44,7 +44,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         homeTeamScore = itemView.findViewById(R.id.home_team_score_textview);
         visitorTeamScore = itemView.findViewById(R.id.visitor_team_score_textview);
         playNowButton = itemView.findViewById(R.id.play_now_button);
-        pickTimebutton = itemView.findViewById(R.id.gameon_date_and_time_button);
+        pickTimeButton = itemView.findViewById(R.id.gameon_date_and_time_button);
+
 
     }
 
@@ -98,26 +99,25 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
                 .into(visitorTeamCircularImageView);
 
 
-
-
         String dateAndTime = games.getDate();
         String[] splitDateAndTime = dateAndTime.split("T");
 
-            if (splitDateAndTime[0].equals("2019-03-14")) {
+        if (splitDateAndTime[0].equals("2019-03-14")) {
 
-                pickTimebutton.setText("GameOn in \n 2hr:35m:48s\n");
-                playNowButton.setText("Picks Completed");
-                playNowButton.setEnabled(false);
-                playNowButton.setBackgroundColor(Color.parseColor("#5D5D5D"));
-            } else {
+            pickTimeButton.setText("GameOn in \n 2hr:35m:48s\n");
+            playNowButton.setText("Picks Completed");
+            playNowButton.setEnabled(false);
+            playNowButton.setBackgroundResource(R.drawable.curved_pickscomplete_button);
 
-                String[] splitDateAndTime1 = dateAndTime.split("T|.\\.");
+        } else {
 
-                pickTimebutton.setText("GameOn @ \n" + splitDateAndTime1[0] + ", " + splitDateAndTime1[1].substring(1, 5) + " PM");
-                playNowButton.setText("Play Now");
+            String[] splitDateAndTime1 = dateAndTime.split("T|.\\.");
+
+            pickTimeButton.setText("GameOn @ \n" + splitDateAndTime1[0] + ", " + splitDateAndTime1[1].substring(1, 5) + " PM");
+            playNowButton.setText("Play Now");
 
 
-            }
+        }
 
     }
 
