@@ -1,8 +1,9 @@
 package org.ohmstheresistance.gameonandroidchallenge.recyclerview;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import org.ohmstheresistance.gameonandroidchallenge.R;
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
+
 
 public class GamesViewHolder extends RecyclerView.ViewHolder {
 
@@ -47,35 +49,37 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
     }
 
 
+    @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     public void onBind(final Games games) {
 
-      String homeTeam = games.getHome_team().getName();
-      String[] splitHomeTeamName = homeTeam.split(" ");
+        String homeTeam = games.getHome_team().getName();
+        String[] splitHomeTeamName = homeTeam.split(" ");
 
-      if(splitHomeTeamName.length <= 2) {
-          homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
+        if (splitHomeTeamName.length <= 2) {
+            homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
 
-      }else{
+        } else {
 
-          homeTeamName.setText(splitHomeTeamName[0] + " " + splitHomeTeamName[1] + "\n" + splitHomeTeamName[2]);
+            homeTeamName.setText(splitHomeTeamName[0] + " " + splitHomeTeamName[1] + "\n" + splitHomeTeamName[2]);
 
-      }
-
-
-      String visitorTeam = games.getVisitor_team().getName();
-      String[] splitVisitorTeamName = visitorTeam.split(" ");
-
-        if(splitVisitorTeamName.length <= 2) {
-            visitorTeamName.setText(splitVisitorTeamName[0] + "\n" + splitVisitorTeamName[1]);
-
-        }else{
-
-            visitorTeamName.setText(splitVisitorTeamName[0] + " " + splitVisitorTeamName[1] + "\n" + splitVisitorTeamName[2]);
+            //homeTeamName.setTextColor(Color.parseColor("#B3B3B3"));
+            homeTeamName.setTextColor(Color.parseColor("#141414"));
 
         }
 
 
-        pickTimebutton.setText("GameOn @ \n" + games.getPicks_open_time());
+        String visitorTeam = games.getVisitor_team().getName();
+        String[] splitVisitorTeamName = visitorTeam.split(" ");
+
+        if (splitVisitorTeamName.length <= 2) {
+            visitorTeamName.setText(splitVisitorTeamName[0] + "\n" + splitVisitorTeamName[1]);
+
+
+        } else {
+
+            visitorTeamName.setText(splitVisitorTeamName[0] + " " + splitVisitorTeamName[1] + "\n" + splitVisitorTeamName[2]);
+
+        }
 
         visitorTeamLogo = games.getVisitor_team().getLogo();
         homeTeamLogo = games.getHome_team().getLogo();
@@ -94,5 +98,27 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
                 .into(visitorTeamCircularImageView);
 
 
+
+
+        String dateAndTime = games.getDate();
+        String[] splitDateAndTime = dateAndTime.split("T");
+
+            if (splitDateAndTime[0].equals("2019-03-14")) {
+
+                pickTimebutton.setText("GameOn in \n 2hr:35m:48s\n");
+                playNowButton.setText("Picks Completed");
+                playNowButton.setEnabled(false);
+                playNowButton.setBackgroundColor(Color.parseColor("#5D5D5D"));
+            } else {
+
+                String[] splitDateAndTime1 = dateAndTime.split("T|.\\.");
+
+                pickTimebutton.setText("GameOn @ \n" + splitDateAndTime1[0] + ", " + splitDateAndTime1[1].substring(1, 5) + " PM");
+                playNowButton.setText("Play Now");
+
+
+            }
+
     }
+
 }

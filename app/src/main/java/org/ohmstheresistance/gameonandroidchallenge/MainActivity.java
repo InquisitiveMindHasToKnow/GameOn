@@ -2,6 +2,7 @@ package org.ohmstheresistance.gameonandroidchallenge;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,10 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.Button;
 
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
@@ -34,7 +33,7 @@ import retrofit2.Retrofit;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "GameJSON.TAG";
-    private NavigationView sports_navView;
+    private BottomNavigationView sports_navView;
     private RecyclerView gamesRecyclerView;
     private DrawerLayout drawerLayout;
     private NavigationView navView;
@@ -53,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         referFriendButton = findViewById(R.id.refer_friend_button);
         sports_navView = findViewById(R.id.sports_nav_view);
 
+        sports_navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        sports_navView.getMenu().getItem(2).setChecked(true);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -125,33 +126,37 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        sports_navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+    }
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-
-                menuItem.setChecked(true);
-
-                switch (menuItem.getItemId()) {
-                    case R.id.sports_navigation_all:
-                        break;
-                    case R.id.sports_navigation_mlb:
-                        break;
-                    case R.id.sports_navigation_nfl:
-                        break;
-                    case R.id.sports_navigation_nba:
-                        break;
-                    case R.id.sports_navigation_epl:
-                        break;
-                }
-                return true;
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
 
+            int mMenuId = item.getItemId();
+
+
+            switch (mMenuId) {
+                case R.id.sports_navigation_all:
+                    break;
+
+                case R.id.sports_navigation_mlb:
+                    break;
+
+                case R.id.sports_navigation_nfl:
+                    break;
+
+                case R.id.sports_navigation_nba:
+                    break;
+
+                case R.id.sports_navigation_epl:
+
+                    break;
             }
 
-        });
-    }
+            return true;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -162,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 
 
