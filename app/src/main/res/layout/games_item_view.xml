@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
             android:background="@drawable/gameon_diagonal_at_grey">
 
             <com.mikhaellopez.circularimageview.CircularImageView
@@ -92,11 +93,12 @@
     <Button
         android:id="@+id/play_now_button"
         android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:text="Play Now"
+        android:layout_height="24dp"
+        android:hint="Play Now"
         app:layout_constraintTop_toBottomOf="@id/individual_game_card"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
+        android:textAllCaps="false"
         android:background="#0C0F32"
         android:textColor="#FFF"
         />
@@ -104,8 +106,9 @@
     <Button
         android:id="@+id/gameon_date_and_time_button"
         android:layout_width="180dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:hint="GameOn in \n 2hr:35m:48s"
+        android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@id/play_now_button"
         app:layout_constraintTop_toBottomOf="@id/individual_game_card"
         android:textColor="#0C0F32"
