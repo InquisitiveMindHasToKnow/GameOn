@@ -98,8 +98,7 @@
         app:layout_constraintTop_toBottomOf="@id/individual_game_card"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="32dp"
-        android:textAllCaps="false"
-        android:background="#0C0F32"
+        android:background="@drawable/curved_playnow_button"
         android:textColor="#FFF"
         />
 
@@ -112,6 +111,6 @@
         app:layout_constraintLeft_toRightOf="@id/play_now_button"
         app:layout_constraintTop_toBottomOf="@id/individual_game_card"
         android:textColor="#0C0F32"
-        android:background="#DDF34F"
+        android:background="@drawable/curved_playtime_button"
         />
 </android.support.constraint.ConstraintLayout>
