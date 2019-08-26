@@ -23,12 +23,12 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:adjustViewBounds="true"
-            android:background="@drawable/gameon_diagonal_at_grey">
+            android:background="@drawable/gameondiagonalcardbackground">
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/visitor_team_circularimageview"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:src="@drawable/chc"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -57,13 +57,12 @@
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/home_team_circularimageview"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginBottom="8dp"
                 android:src="@drawable/phi"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-
-                />
+                app:layout_constraintRight_toRightOf="parent" />
 
             <TextView
                 android:id="@+id/home_team_name_textview"
@@ -71,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Philadelphia \n Phillies"
                 android:textStyle="bold"
+                android:layout_marginStart="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/home_team_circularimageview" />
 
@@ -95,6 +95,7 @@
         android:layout_width="140dp"
         android:layout_height="24dp"
         android:hint="Play Now"
+        android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/individual_game_card"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="32dp"
