@@ -60,7 +60,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         String[] splitHomeTeamName = homeTeam.split(" ");
 
 
-        if (splitHomeTeamName.length <= 2 && splitHomeTeamName!= null) {
+        if (splitHomeTeamName.length <= 2) {
             homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
 
         } else {
@@ -104,41 +104,42 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
                 .into(visitorTeamCircularImageView);
 
 
-
-
         String dateAndTime = games.getDate();
-        String[] splitDateAndTime = dateAndTime.split("T");
 
-
-        if (splitDateAndTime[0].equals("2019-03-14")) {
-
-            pickTimeButton.setText("GameOn in \n 2hr:35m:48s\n");
-            playNowButton.setText("Picks Completed");
-            playNowButton.setEnabled(false);
-            playNowButton.setBackgroundResource(R.drawable.curved_pickscomplete_button);
-
-        } else {
-
-            String dateAndTime1 = games.getDate();
-            String[] splitDateAndTime1 = dateAndTime1.split("T|.\\.");
-
-            String dayOfGame = splitDateAndTime1[0];
-
-
-            Log.d("date of game: ", splitDateAndTime1[0]);
+        String dayOfGame = dateAndTime.substring(0, 10);
+        String timeOfGame = dateAndTime.substring(11, 16);
 
             try {
+
 
                 SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = dateFormat2.parse(dayOfGame);
 
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yy");
                 String myDate = dateFormat.format(date);
 
-                Log.d("myDate: ", myDate);
 
-                pickTimeButton.setText("GameOn @ \n" + myDate + ", " + splitDateAndTime1[1].substring(1, 5) + " PM");
-                playNowButton.setText("Play Now");
+                final SimpleDateFormat time24HrTo12Hr = new SimpleDateFormat("HH:mm");
+                final Date dateObj = time24HrTo12Hr.parse(timeOfGame);
+                timeOfGame = new SimpleDateFormat("h:mm").format(dateObj);
+
+                Log.d("Game Date: ", dayOfGame);
+
+                Log.d("Game Date: ", myDate + " Game Time:" + timeOfGame);
+
+                if (myDate.equals("3/14/19")) {
+
+                    pickTimeButton.setText("GameOn in \n 2hr:35m:48s\n");
+                    playNowButton.setText("Picks Completed");
+                    playNowButton.setEnabled(false);
+                    playNowButton.setBackgroundResource(R.drawable.curved_pickscomplete_button);
+
+                }else {
+
+                    pickTimeButton.setText("GameOn @ \n" + myDate + ", " + timeOfGame + " PM");
+                    playNowButton.setText("Play Now");
+
+                }
 
             } catch (java.text.ParseException e) {
 
@@ -147,11 +148,4 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
             }
         }
-
-
-
-    }
-
-
-
 }
