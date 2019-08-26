@@ -1,9 +1,9 @@
 package org.ohmstheresistance.gameonandroidchallenge.recyclerview;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +13,9 @@ import com.squareup.picasso.Picasso;
 
 import org.ohmstheresistance.gameonandroidchallenge.R;
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class GamesViewHolder extends RecyclerView.ViewHolder {
@@ -56,15 +59,17 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         String homeTeam = games.getHome_team().getName();
         String[] splitHomeTeamName = homeTeam.split(" ");
 
-        if (splitHomeTeamName.length <= 2) {
+
+        if (splitHomeTeamName.length <= 2 && splitHomeTeamName!= null) {
             homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
 
         } else {
 
             homeTeamName.setText(splitHomeTeamName[0] + " " + splitHomeTeamName[1] + "\n" + splitHomeTeamName[2]);
 
+
             //homeTeamName.setTextColor(Color.parseColor("#B3B3B3"));
-            homeTeamName.setTextColor(Color.parseColor("#141414"));
+            //homeTeamName.setTextColor(Color.parseColor("#141414"));
 
         }
 
@@ -86,8 +91,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         homeTeamLogo = games.getHome_team().getLogo();
 
 
-        //homeTeamScore.setText(games.getHome_team_points());
-        //visitorTeamScore.setText(games.getVisitor_team_points());
+//        homeTeamScore.setText(games.getHome_team_points());
+//        visitorTeamScore.setText(games.getVisitor_team_points());
 
         Picasso.get()
                 .load(homeTeamLogo)
@@ -99,8 +104,11 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
                 .into(visitorTeamCircularImageView);
 
 
+
+
         String dateAndTime = games.getDate();
         String[] splitDateAndTime = dateAndTime.split("T");
+
 
         if (splitDateAndTime[0].equals("2019-03-14")) {
 
@@ -111,14 +119,39 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
         } else {
 
-            String[] splitDateAndTime1 = dateAndTime.split("T|.\\.");
+            String dateAndTime1 = games.getDate();
+            String[] splitDateAndTime1 = dateAndTime1.split("T|.\\.");
 
-            pickTimeButton.setText("GameOn @ \n" + splitDateAndTime1[0] + ", " + splitDateAndTime1[1].substring(1, 5) + " PM");
-            playNowButton.setText("Play Now");
+            String dayOfGame = splitDateAndTime1[0];
 
 
+            Log.d("date of game: ", splitDateAndTime1[0]);
+
+            try {
+
+                SimpleDateFormat dateFormat2 = new SimpleDateFormat("yyyy-MM-dd");
+                Date date = dateFormat2.parse(dayOfGame);
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy");
+                String myDate = dateFormat.format(date);
+
+                Log.d("myDate: ", myDate);
+
+                pickTimeButton.setText("GameOn @ \n" + myDate + ", " + splitDateAndTime1[1].substring(1, 5) + " PM");
+                playNowButton.setText("Play Now");
+
+            } catch (java.text.ParseException e) {
+
+                e.printStackTrace();
+
+
+            }
         }
 
+
+
     }
+
+
 
 }
