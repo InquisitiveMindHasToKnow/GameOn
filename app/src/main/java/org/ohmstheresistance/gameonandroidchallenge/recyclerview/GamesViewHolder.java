@@ -88,7 +88,6 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         if (splitHomeTeamName.length > 2) {
 
 
-
             String firstWordOfHomeTeam1 = splitHomeTeamName[0] + " ";
             SpannableString firstWordOfHomeTeamSpannable1= new SpannableString(firstWordOfHomeTeam1);
             firstWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, firstWordOfHomeTeam1.length(), 0);
@@ -99,11 +98,10 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             secondWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, secondWordOfHomeTeam1.length(), 0);
             homeTeamNameBuilder1.append(secondWordOfHomeTeamSpannable1);
 
-            String thirdWordOfHomeTeam1 = splitHomeTeamName[2] + " ";
-            SpannableString thirdWordOfHomeTeamSpannable1 = new SpannableString(thirdWordOfHomeTeam1);
-            thirdWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, thirdWordOfHomeTeam1.length(), 0);
-            homeTeamNameBuilder1.append(thirdWordOfHomeTeamSpannable1);
-
+            String thirdWordOfHomeTeam = splitHomeTeamName[2] + " ";
+            SpannableString thirdWordOfHomeTeamSpannable = new SpannableString(thirdWordOfHomeTeam);
+            thirdWordOfHomeTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, thirdWordOfHomeTeam.length(), 0);
+            homeTeamNameBuilder1.append(thirdWordOfHomeTeamSpannable);
             homeTeamName.setText(homeTeamNameBuilder1, TextView.BufferType.SPANNABLE);
 
         }
