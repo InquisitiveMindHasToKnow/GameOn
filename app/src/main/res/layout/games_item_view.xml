@@ -40,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Chicago \n Cubs"
+                android:textColor="#B3B3B3"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/visitor_team_circularimageview"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -69,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Philadelphia \n Phillies"
+                android:textColor="#B3B3B3"
                 android:textStyle="bold"
                 android:layout_marginStart="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"

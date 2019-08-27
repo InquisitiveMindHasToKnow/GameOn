@@ -1,8 +1,12 @@
 package org.ohmstheresistance.gameonandroidchallenge.recyclerview;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -58,15 +62,49 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         String homeTeam = games.getHome_team().getName();
         String[] splitHomeTeamName = homeTeam.split(" ");
 
+
+        SpannableStringBuilder homeTeamNameBuilder = new SpannableStringBuilder();
+        SpannableStringBuilder homeTeamNameBuilder1 = new SpannableStringBuilder();
+        SpannableStringBuilder visitorTeamNameBuilder = new SpannableStringBuilder();
+        SpannableStringBuilder visitorTeamNameBuilder1 = new SpannableStringBuilder();
+
         if (splitHomeTeamName.length > 1 && splitHomeTeamName.length <= 2) {
 
-            homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
+
+            String firstWordOfHomeTeam = splitHomeTeamName[0] + "\n";
+            SpannableString firstWordOfHomeTeamSpannable= new SpannableString(firstWordOfHomeTeam);
+            firstWordOfHomeTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, firstWordOfHomeTeam.length(), 0);
+            homeTeamNameBuilder.append(firstWordOfHomeTeamSpannable);
+
+            String secondWordOfHomeTeam = splitHomeTeamName[1];
+            SpannableString secondWordOfHomeTeamSpannable= new SpannableString(secondWordOfHomeTeam);
+            secondWordOfHomeTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, secondWordOfHomeTeam.length(), 0);
+            homeTeamNameBuilder.append(secondWordOfHomeTeamSpannable);
+
+            homeTeamName.setText(homeTeamNameBuilder, TextView.BufferType.SPANNABLE);
 
 
         }
         if (splitHomeTeamName.length > 2) {
 
-            homeTeamName.setText(splitHomeTeamName[0] + " " + splitHomeTeamName[1] + "\n" + splitHomeTeamName[2]);
+
+
+            String firstWordOfHomeTeam1 = splitHomeTeamName[0] + " ";
+            SpannableString firstWordOfHomeTeamSpannable1= new SpannableString(firstWordOfHomeTeam1);
+            firstWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, firstWordOfHomeTeam1.length(), 0);
+            homeTeamNameBuilder1.append(firstWordOfHomeTeamSpannable1);
+
+            String secondWordOfHomeTeam1 = splitHomeTeamName[1] + "\n";
+            SpannableString secondWordOfHomeTeamSpannable1 = new SpannableString(secondWordOfHomeTeam1);
+            secondWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, secondWordOfHomeTeam1.length(), 0);
+            homeTeamNameBuilder1.append(secondWordOfHomeTeamSpannable1);
+
+            String thirdWordOfHomeTeam1 = splitHomeTeamName[2] + " ";
+            SpannableString thirdWordOfHomeTeamSpannable1 = new SpannableString(thirdWordOfHomeTeam1);
+            thirdWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, thirdWordOfHomeTeam1.length(), 0);
+            homeTeamNameBuilder1.append(thirdWordOfHomeTeamSpannable1);
+
+            homeTeamName.setText(homeTeamNameBuilder1, TextView.BufferType.SPANNABLE);
 
         }
 
@@ -75,16 +113,39 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         String[] splitVisitorTeamName = visitorTeam.split(" ");
 
         if (splitVisitorTeamName.length > 1 && splitVisitorTeamName.length <= 2) {
-            visitorTeamName.setText(splitVisitorTeamName[0] + "\n" + splitVisitorTeamName[1]);
 
+            String firstWordOfVisitorTeam = splitVisitorTeamName[0] + "\n";
+            SpannableString firstWordOfVisitorTeamSpannable= new SpannableString(firstWordOfVisitorTeam);
+            firstWordOfVisitorTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, firstWordOfVisitorTeam.length(), 0);
+            visitorTeamNameBuilder.append(firstWordOfVisitorTeamSpannable);
+
+            String secondWordOfVisitorTeam = splitVisitorTeamName[1];
+            SpannableString secondWordOfVisitorTeamSpannable= new SpannableString(secondWordOfVisitorTeam);
+            secondWordOfVisitorTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, secondWordOfVisitorTeam.length(), 0);
+            visitorTeamNameBuilder.append(secondWordOfVisitorTeamSpannable);
+
+            visitorTeamName.setText(visitorTeamNameBuilder, TextView.BufferType.SPANNABLE);
 
         }
 
         if (splitVisitorTeamName.length > 2) {
 
+            String firstWordOfVisitorTeam1 = splitVisitorTeamName[0] + " ";
+            SpannableString firstWordOfVisitorTeamSpannable1 = new SpannableString(firstWordOfVisitorTeam1);
+            firstWordOfVisitorTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, firstWordOfVisitorTeam1.length(), 0);
+            visitorTeamNameBuilder1.append(firstWordOfVisitorTeamSpannable1);
 
-            visitorTeamName.setText(splitVisitorTeamName[0] + " " + splitVisitorTeamName[1] + "\n" + splitVisitorTeamName[2]);
+            String secondWordOfVisitorTeam1 = splitVisitorTeamName[1] + "\n";
+            SpannableString secondWordOfVisitorTeamSpannable1 = new SpannableString(secondWordOfVisitorTeam1);
+            secondWordOfVisitorTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#B3B3B3")), 0, secondWordOfVisitorTeam1.length(), 0);
+            visitorTeamNameBuilder1.append(secondWordOfVisitorTeamSpannable1);
 
+            String thirdWordOfVisitorTeam = splitVisitorTeamName[2];
+            SpannableString thirdWordOfVisitorTeamSpannable= new SpannableString(thirdWordOfVisitorTeam);
+            thirdWordOfVisitorTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, thirdWordOfVisitorTeam.length(), 0);
+            visitorTeamNameBuilder1.append(thirdWordOfVisitorTeamSpannable);
+
+            visitorTeamName.setText(visitorTeamNameBuilder1, TextView.BufferType.SPANNABLE);
         }
 
         visitorTeamLogo = games.getVisitor_team().getLogo();
