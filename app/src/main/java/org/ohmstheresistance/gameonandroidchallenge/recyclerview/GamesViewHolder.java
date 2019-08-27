@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.squareup.picasso.Picasso;
@@ -34,8 +33,6 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
     private String homeTeamLogo;
     private String visitorTeamLogo;
 
-    private static final String TAG = "GameJSON.TAG";
-
 
     public GamesViewHolder(@NonNull View itemView) {
 
@@ -57,20 +54,19 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
     @SuppressLint({"SetTextI18n", "SimpleDateFormat"})
     public void onBind(final Games games) {
 
+
         String homeTeam = games.getHome_team().getName();
         String[] splitHomeTeamName = homeTeam.split(" ");
 
+        if (splitHomeTeamName.length > 1 && splitHomeTeamName.length <= 2) {
 
-        if (splitHomeTeamName.length <= 2 && splitHomeTeamName.length >1) {
             homeTeamName.setText(splitHomeTeamName[0] + "\n" + splitHomeTeamName[1]);
 
+
         }
-        if(splitHomeTeamName.length > 2){
+        if (splitHomeTeamName.length > 2) {
 
             homeTeamName.setText(splitHomeTeamName[0] + " " + splitHomeTeamName[1] + "\n" + splitHomeTeamName[2]);
-
-            //homeTeamName.setTextColor(Color.parseColor("#B3B3B3"));
-            //homeTeamName.setTextColor(Color.parseColor("#141414"));
 
         }
 
@@ -78,13 +74,14 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         String visitorTeam = games.getVisitor_team().getName();
         String[] splitVisitorTeamName = visitorTeam.split(" ");
 
-        if (splitVisitorTeamName.length <= 2 && splitVisitorTeamName.length > 1) {
+        if (splitVisitorTeamName.length > 1 && splitVisitorTeamName.length <= 2) {
             visitorTeamName.setText(splitVisitorTeamName[0] + "\n" + splitVisitorTeamName[1]);
 
 
         }
 
-        if(splitVisitorTeamName.length > 2){
+        if (splitVisitorTeamName.length > 2) {
+
 
             visitorTeamName.setText(splitVisitorTeamName[0] + " " + splitVisitorTeamName[1] + "\n" + splitVisitorTeamName[2]);
 
@@ -135,7 +132,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
                 if (myDate.equals("8/14/19")) {
 
                     pickTimeButton.setText("GameOn in \n 2hr:35m:48s\n");
-                    playNowButton.setText("Picks Completed");
+                    playNowButton.setText("Picks Complete");
                     playNowButton.setEnabled(false);
                     playNowButton.setBackgroundResource(R.drawable.curved_pickscomplete_button);
 
@@ -153,11 +150,6 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
 
             }
-        } else {
-//            Toast.makeText(itemView.getContext(), "All games already displayed!",
-//                    Toast.LENGTH_LONG).show();
-
-
         }
     }
 

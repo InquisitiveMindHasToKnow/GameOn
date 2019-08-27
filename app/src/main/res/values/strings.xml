@@ -13,4 +13,7 @@
     <string name="sports_menu_epl">EPL <font color="#FFF" size="24"> </font></string>
 
 
+    <string name="team_name_colors"> <font color="#B3B3B3" > </font> <font color="#141414" > </font></string>
+
+    <string name="team_colors"> <font color="#B3B3B3"> First Color</font> <font color="#141414">Second Color</font> </string>
 </resources>
