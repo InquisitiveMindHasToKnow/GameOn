@@ -9,6 +9,7 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
@@ -82,6 +83,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             String bottomHalfOfHomeTeamName = splitHomeTeamName[1];
             SpannableString bottomHalfOfHomeTeamNameSpannable= new SpannableString(bottomHalfOfHomeTeamName);
             bottomHalfOfHomeTeamNameSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, bottomHalfOfHomeTeamName.length(), 0);
+            bottomHalfOfHomeTeamNameSpannable.setSpan(new RelativeSizeSpan(1.2f), 0, bottomHalfOfHomeTeamName.length(), 0);
             homeTeamNameBuilder.append(bottomHalfOfHomeTeamNameSpannable);
 
             homeTeamName.setText(homeTeamNameBuilder, TextView.BufferType.SPANNABLE);
@@ -100,6 +102,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             String bottomHalfOfHomeTeamName1 = "\n" + splitHomeTeamName[2];
             SpannableString bottomHalfOfHomeTeamName1Spannable = new SpannableString(bottomHalfOfHomeTeamName1);
             bottomHalfOfHomeTeamName1Spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, bottomHalfOfHomeTeamName1.length(), 0);
+            bottomHalfOfHomeTeamName1Spannable.setSpan(new RelativeSizeSpan(1.2f), 0, bottomHalfOfHomeTeamName1.length(), 0);
+
             homeTeamNameBuilder1.append(bottomHalfOfHomeTeamName1Spannable);
 
             homeTeamName.setText(homeTeamNameBuilder1, TextView.BufferType.SPANNABLE);
@@ -120,6 +124,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             String bottomHalfOfVisitorTeamName = splitVisitorTeamName[1];
             SpannableString bottomHalfOfVisitorTeamNameSpannable= new SpannableString(bottomHalfOfVisitorTeamName);
             bottomHalfOfVisitorTeamNameSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, bottomHalfOfVisitorTeamName.length(), 0);
+            bottomHalfOfVisitorTeamNameSpannable.setSpan(new RelativeSizeSpan(1.2f), 0, bottomHalfOfVisitorTeamName.length(), 0);
+
             visitorTeamNameBuilder.append(bottomHalfOfVisitorTeamNameSpannable);
 
             visitorTeamName.setText(visitorTeamNameBuilder, TextView.BufferType.SPANNABLE);
@@ -136,6 +142,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             String bottomHalfOfVisitorTeamName1 = "\n" + splitVisitorTeamName[2];
             SpannableString bottomHalfOfVisitorTeamName1Spannable= new SpannableString(bottomHalfOfVisitorTeamName1);
             bottomHalfOfVisitorTeamName1Spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, bottomHalfOfVisitorTeamName1.length(), 0);
+            bottomHalfOfVisitorTeamName1Spannable.setSpan(new RelativeSizeSpan(1.2f), 0, bottomHalfOfVisitorTeamName1.length(), 0);
+
             visitorTeamNameBuilder1.append(bottomHalfOfVisitorTeamName1Spannable);
 
             visitorTeamName.setText(visitorTeamNameBuilder1, TextView.BufferType.SPANNABLE);
