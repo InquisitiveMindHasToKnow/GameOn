@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
 import org.ohmstheresistance.gameonandroidchallenge.network.GameService;
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         gamesRecyclerView = findViewById(R.id.games_recycler_view);
         gamesList = new ArrayList<>();
 
+
         Retrofit gamesRetrofit = RetrofitSingleton.getRetrofitInstance();
         GameService gameService = gamesRetrofit.create(GameService.class);
         gameService.getGames().enqueue(new Callback<List<Games>>() {
@@ -106,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
 
 
                 gamesList = response.body();
+
+                if (gamesList == null) {
+                    Toast.makeText(getApplicationContext(), "Unable To Display Empty List", Toast.LENGTH_LONG).show();
+                }
 
                 Log.d(TAG, "Retrofit call works " + response.body().get(6).getBroadcast_info());
 
