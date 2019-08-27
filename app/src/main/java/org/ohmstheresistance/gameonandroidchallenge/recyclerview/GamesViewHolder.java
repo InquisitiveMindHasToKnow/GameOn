@@ -63,7 +63,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
 
         String homeTeam = games.getHome_team().getName();
-        String[] splitHomeTeamName = homeTeam.split(" ");
+        String[] splitHomeTeamName = homeTeam.split(" ", 3);
 
 
         SpannableStringBuilder homeTeamNameBuilder = new SpannableStringBuilder();
@@ -102,7 +102,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
             secondWordOfHomeTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#909090")), 0, secondWordOfHomeTeam1.length(), 0);
             homeTeamNameBuilder1.append(secondWordOfHomeTeamSpannable1);
 
-            String thirdWordOfHomeTeam = splitHomeTeamName[2] + " ";
+            String thirdWordOfHomeTeam = splitHomeTeamName[2];
             SpannableString thirdWordOfHomeTeamSpannable = new SpannableString(thirdWordOfHomeTeam);
             thirdWordOfHomeTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, thirdWordOfHomeTeam.length(), 0);
             thirdWordOfHomeTeamSpannable.setSpan(new StyleSpan(Typeface.BOLD), 0, thirdWordOfHomeTeam.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -114,7 +114,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
 
         String visitorTeam = games.getVisitor_team().getName();
-        String[] splitVisitorTeamName = visitorTeam.split(" ");
+        String[] splitVisitorTeamName = visitorTeam.split(" ", 3);
 
         if (splitVisitorTeamName.length > 1 && splitVisitorTeamName.length <= 2) {
 
@@ -135,17 +135,17 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
         if (splitVisitorTeamName.length > 2) {
 
-            String firstWordOfVisitorTeam1 = splitVisitorTeamName[0] + " ";
+            String firstWordOfVisitorTeam1 = splitVisitorTeamName[0]+ " ";
             SpannableString firstWordOfVisitorTeamSpannable1 = new SpannableString(firstWordOfVisitorTeam1);
             firstWordOfVisitorTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#909090")), 0, firstWordOfVisitorTeam1.length(), 0);
             visitorTeamNameBuilder1.append(firstWordOfVisitorTeamSpannable1);
 
-            String secondWordOfVisitorTeam1 = splitVisitorTeamName[1] + "\n";
+            String secondWordOfVisitorTeam1 = splitVisitorTeamName[1];
             SpannableString secondWordOfVisitorTeamSpannable1 = new SpannableString(secondWordOfVisitorTeam1);
             secondWordOfVisitorTeamSpannable1.setSpan(new ForegroundColorSpan(Color.parseColor("#909090")), 0, secondWordOfVisitorTeam1.length(), 0);
             visitorTeamNameBuilder1.append(secondWordOfVisitorTeamSpannable1);
 
-            String thirdWordOfVisitorTeam = splitVisitorTeamName[2];
+            String thirdWordOfVisitorTeam = "\n" + splitVisitorTeamName[2];
             SpannableString thirdWordOfVisitorTeamSpannable= new SpannableString(thirdWordOfVisitorTeam);
             thirdWordOfVisitorTeamSpannable.setSpan(new ForegroundColorSpan(Color.parseColor("#141414")), 0, thirdWordOfVisitorTeam.length(), 0);
             thirdWordOfVisitorTeamSpannable.setSpan(new StyleSpan(Typeface.BOLD), 0, thirdWordOfVisitorTeam.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
