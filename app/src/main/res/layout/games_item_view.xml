@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:adjustViewBounds="true"
-            android:background="@drawable/gameondiagonalcardbackground">
+            android:background="@drawable/gameon_diagonal_at_grey">
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/visitor_team_circularimageview"
