@@ -191,6 +191,15 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
                 Log.d("Game Date: ", myDate + " Game Time:" + timeOfGame + " Home Team: " + homeTeam);
 
 
+                String gameDateAndTime = myDate + ", " + timeOfGame;
+                SpannableStringBuilder gameDateAndTimeBuilder = new SpannableStringBuilder();
+                SpannableString gameDateAndTimeSpannable= new SpannableString(gameDateAndTime);
+                gameDateAndTimeSpannable.setSpan(new StyleSpan(Typeface.BOLD), 0, gameDateAndTime.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                gameDateAndTimeBuilder.append(gameDateAndTimeSpannable);
+
+
+
                 if (myDate.equals("8/14/19")) {
 
                     pickTimeButton.setText("GameOn in \n 2hr:35m:48s\n");
@@ -200,7 +209,8 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
                 } else {
 
-                    pickTimeButton.setText("GameOn @ \n" + myDate + ", " + timeOfGame + " PM");
+                    pickTimeButton.setText("GameOn @ \n" + gameDateAndTimeBuilder + " PM", TextView.BufferType.SPANNABLE);
+                    //pickTimeButton.setText("GameOn @ \n" + myDate + ", " + timeOfGame + " PM");
                     playNowButton.setText("Play Now");
 
                 }
