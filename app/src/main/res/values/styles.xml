@@ -8,8 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-
-    <style name="boldforteamnames">
-        <item name="android:textStyle"> bold</item>
-    </style>
 </resources>
