@@ -22,8 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:adjustViewBounds="true"
-            android:background="@drawable/gameon_diagonal_at_grey">
+            android:background="@drawable/cardbackground">
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/visitor_team_circularimageview"
