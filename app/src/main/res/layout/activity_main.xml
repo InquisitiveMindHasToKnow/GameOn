@@ -103,7 +103,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
-                            android:background="#FFF"
+                            android:background="#DDF34F"
                             android:src="@drawable/allfornow" />
 
                         <Button
@@ -113,7 +113,7 @@
                             android:background="#00FFFFFF"
                             android:text="All"
                             android:textStyle="bold"
-                            android:textColor="#FFF" />
+                            android:textColor="#DDF34F" />
 
                     </LinearLayout>
 
