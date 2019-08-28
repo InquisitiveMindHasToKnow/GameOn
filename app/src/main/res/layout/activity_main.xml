@@ -65,17 +65,81 @@
 
     </android.support.design.widget.NavigationView>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/sports_nav_view"
-        android:layout_width="64dp"
-        android:layout_height="400dp"
-        android:layout_gravity="end|center_vertical"
-        android:layout_marginTop="200dp"
-        android:visibility="visible"
-        android:background="@drawable/sportsnavbar"
-        app:itemTextColor="#FFF"
-        app:menu="@menu/sports_menu" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        >
 
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="480dp"
+            android:orientation="vertical"
+            android:background="@drawable/list_of_buttons_background"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/allButton"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:textColor="#FFF"
+                    android:text="All" />
+
+                <Button
+                    android:id="@+id/mlbButton"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:textColor="#FFF"
+                    android:text="MLB" />
+
+                <Button
+                    android:id="@+id/nflButton"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:textColor="#FFF"
+                    android:text="NFL" />
+
+
+                <Button
+                    android:id="@+id/nbaButton"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:textColor="#FFF"
+                    android:text="NBA" />
+
+                <Button
+                    android:id="@+id/eplButton"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:textColor="#FFF"
+                    android:text="EPL" />
+
+                <Button
+                    android:id="@+id/nhlButton"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:textColor="#FFF"
+                    android:text="NHL"/>
+
+                <Button
+                android:id="@+id/ncaaButton"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
+                android:textColor="#FFF"
+                android:text="NCAA"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v4.widget.DrawerLayout>
 </LinearLayout>
