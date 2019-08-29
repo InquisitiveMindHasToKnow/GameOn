@@ -51,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerLayout);
         navView = findViewById(R.id.nav_view);
         referFriendButton = findViewById(R.id.refer_friend_button);
-      //  sports_navView = findViewById(R.id.sports_nav_view);
-
-//        sports_navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-     //   sports_navView.getMenu().getItem(2).setChecked(true);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
