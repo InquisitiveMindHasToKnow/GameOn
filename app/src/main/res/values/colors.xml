@@ -3,5 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="menu_background_color">#0C1034</color>
+    <color name="side_scroller_all_color">#DDF34F</color>
+    <color name="side_scroller_all_text_color">#DDF34F</color>
 
 </resources>

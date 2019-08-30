@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="#0C1034"
+            android:background="@color/menu_background_color"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header"
             app:itemTextColor="#FFF"
@@ -66,9 +66,9 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="420dp"
-                android:layout_marginBottom="32dp"
+                android:layout_width="@dimen/side_scroller_background_width"
+                android:layout_height="@dimen/side_scroller_background_height"
+                android:layout_marginBottom="@dimen/side_scroller_margin_bottom"
                 android:background="@drawable/side_scroller_background"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -80,8 +80,8 @@
             <ScrollView
                 android:id="@+id/scrollView"
                 android:layout_width="wrap_content"
-                android:layout_height="300dp"
-                android:layout_marginBottom="40dp"
+                android:layout_height="@dimen/scrollview_layout_height"
+                android:layout_marginBottom="@dimen/scrollview_margin_bottom"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -89,7 +89,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_height="@dimen/scrollview_child_linearlayout_height"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -100,10 +100,10 @@
 
                         <ImageView
                             android:id="@+id/allsports_icon"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="@dimen/side_scroller_button_image_width"
+                            android:layout_height="@dimen/side_scroller_button_image_height"
                             android:layout_gravity="center"
-                            android:background="#DDF34F"
+                            android:background="@color/side_scroller_all_color"
                             android:src="@drawable/allfornow" />
 
                         <Button
@@ -111,9 +111,9 @@
                             android:layout_width="62dp"
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
-                            android:text="All"
+                            android:text="@string/all_button_name"
                             android:textStyle="bold"
-                            android:textColor="#DDF34F" />
+                            android:textColor="@color/side_scroller_all_text_color" />
 
                     </LinearLayout>
 
@@ -137,7 +137,7 @@
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
                             android:textStyle="bold"
-                            android:text="MLB"
+                            android:text="@string/mlb_button_name"
                             android:textColor="#FFF" />
 
                     </LinearLayout>
@@ -163,7 +163,7 @@
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
                             android:textStyle="bold"
-                            android:text="NFL"
+                            android:text="@string/nfl_button_name"
                             android:textColor="#FFF" />
 
                     </LinearLayout>
@@ -189,7 +189,7 @@
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
                             android:textStyle="bold"
-                            android:text="NBA"
+                            android:text="@string/nba_button_name"
                             android:textColor="#FFF" />
 
                     </LinearLayout>
@@ -214,7 +214,7 @@
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
                             android:textStyle="bold"
-                            android:text="EPL"
+                            android:text="@string/epl_button_name"
                             android:textColor="#FFF" />
 
                     </LinearLayout>
@@ -239,7 +239,7 @@
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
                             android:textStyle="bold"
-                            android:text="NHL"
+                            android:text="@string/nhl_button_name"
                             android:textColor="#FFF" />
 
                     </LinearLayout>
@@ -264,7 +264,7 @@
                             android:layout_height="48dp"
                             android:background="#00FFFFFF"
                             android:textStyle="bold"
-                            android:text="NCAA"
+                            android:text="@string/ncaa_button_name"
                             android:textColor="#FFF" />
 
                     </LinearLayout>
