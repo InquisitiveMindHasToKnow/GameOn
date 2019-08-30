@@ -16,4 +16,11 @@
     <string name="team_name_colors"> <font color="#B3B3B3" > </font> <font color="#141414" > </font></string>
 
     <string name="team_colors"> <font color="#B3B3B3"> First Color</font> <font color="#141414">Second Color</font> </string>
+    <string name="ncaa_button_name">NCAA</string>
+    <string name="nhl_button_name">NHL</string>
+    <string name="epl_button_name">EPL</string>
+    <string name="nba_button_name">NBA</string>
+    <string name="nfl_button_name">NFL</string>
+    <string name="mlb_button_name">MLB</string>
+    <string name="all_button_name">All</string>
 </resources>

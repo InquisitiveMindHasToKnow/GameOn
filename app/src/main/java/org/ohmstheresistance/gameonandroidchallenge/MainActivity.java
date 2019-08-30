@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import org.ohmstheresistance.gameonandroidchallenge.model.Games;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView gamesRecyclerView;
     private DrawerLayout drawerLayout;
     private NavigationView navView;
-    private Button referFriendButton;
+    private ScrollView scrollView;
 
     private List<Games> gamesList;
 
@@ -50,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navView = findViewById(R.id.nav_view);
-        referFriendButton = findViewById(R.id.refer_friend_button);
+        scrollView = findViewById(R.id.scrollView);
+        
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -169,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
 
